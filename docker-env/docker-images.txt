@@ -1,0 +1,3 @@
+docker pull kathara/base
+docker pull kathara/frr
+docker pull ciscotalos/snort3
