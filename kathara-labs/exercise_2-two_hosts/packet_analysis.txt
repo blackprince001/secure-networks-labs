@@ -1,0 +1,14 @@
+Assign the ip addresses to both devices.
+
+pc1: ifconfig eth0 10.0.0.1 netmask 255.255.255.0 broadcast 10.0.0.255 up
+pc2: ifconfig eth0 10.0.0.2 netmask 255.255.255.0 broadcast 10.0.0.255 up
+
+Monitor the packets on one host and ping that host from another host
+
+eg;
+
+pc2: tcpdump -tenni eth0 -w /hosthome/capture.pcap
+pc1: ping 10.0.0.2  -- ping pc2
+
+You can view the packets later by copying the capture packets from the host.
+From your terminal copy the files with `docker cp <container_name>:<path> <destination_path>`
