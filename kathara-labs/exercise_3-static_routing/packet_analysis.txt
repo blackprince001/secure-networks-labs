@@ -1,0 +1,13 @@
+You would be given a configuration of devices on each network collision domain.
+
+pc1 has a network 195.11.14.0/24 and so does other devices.
+
+For pc1 to communicate with the routers in domain B, you would have to add a default GATEWAY
+for the address of pc1 (195.11.14.1/24) so that the GATEWAY can route the packet to r1 per the configuration.
+
+If you have two routers on a separate network domain like for r1 and r2, at moment you would want to forward a packet to pc1 from r2, you would have to add that address to the routing table of r2. Same oes for r1.
+
+The command has the format: ip route add <device_addr> via <router_addr> dev eth0
+and this is the sane way we add default gateways to end devices on a network.
+
+When all the routes are clearly defined on each device, you can now safely transfer one packet from one network to another network provide the routers have the correct network address and routing information.
