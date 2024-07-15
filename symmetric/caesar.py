@@ -1,8 +1,7 @@
-
 def encode_decode(text, type="encode", key=1):
     assert type in ["encode", "decode"]
     assert key in range(1, 255)
-    
+
     t = ""
     for char in text:
         a = ord(char)
@@ -13,12 +12,12 @@ def encode_decode(text, type="encode", key=1):
         # a = a % 26
         # convert back to char
         b = chr(a)
-        t += b    
+        t += b
     return t
 
 
-text = "Hello World!"
+text = "This"
 
-encode = encode_decode(text, "encode", 1)
-decode = encode_decode(encode, "decode", 1)
+encode = encode_decode(text, "encode", 2)
+decode = encode_decode(encode, "decode", 2)
 print(text, encode, decode)
